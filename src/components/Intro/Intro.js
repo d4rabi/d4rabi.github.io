@@ -74,7 +74,7 @@ const Intro = forwardRef((props, ref) => {
                     " Curiosity is the root of learning. "
                 </Typography>
                 <Box sx={{display: 'flex', justifyContent: 'center', my: '16px', fontSize: {xs:'10px', sm: '13px', md: '16px'}}}>
-                    <Button link='https://www.linkedin.com/in/fauzan-el-ardhi/'>
+                    <Button link='https://github.com/d4rabi/resume/raw/master/Fauzan-Resume.pdf'>
                         Download My Resume
                     </Button>
                 </Box>
