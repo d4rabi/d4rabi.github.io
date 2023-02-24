@@ -15,7 +15,7 @@ function Button(prop) {
 
 const Intro = forwardRef((props, ref) => {
     return (
-        <div id='' ref={ref} {...props} className='section'>
+        <div ref={ref} {...props}>
             <Paper
                 elevation={0}
                 sx={{ 

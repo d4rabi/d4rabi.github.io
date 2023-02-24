@@ -11,7 +11,7 @@ const About = forwardRef((props, ref) => {
     const handleCloseModal = () => setOpenModal(false);
 
     return (
-        <div id='about' ref={ref} {...props} className='section'>
+        <div ref={ref} {...props}>
             <Section num='0' title='About'>
                 <Paper elevation={0} sx={{ bgcolor: '#0a192f', display: 'flex', height: '50vh', maxWidth: '80vw', overflow: 'auto' }} >
                     <Grid container spacing={2}>

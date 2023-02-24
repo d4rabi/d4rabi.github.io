@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router } from 'react-router-dom';
 import { CssBaseline } from "@mui/material";
+import { motion } from "framer-motion";
 import './App.css';
-import styles from "./styles.module.css";
 import Loading from './components/Loading/Loading';
 import MainContent from './MainContent';
 
@@ -21,14 +21,21 @@ function App() {
     <Router>
       <CssBaseline />
         { loading && (
-            <div className={`${loading ? '' : styles.fadeOut}`}>
+            <motion.div
+                initial={{ opacity: 1 }}
+                animate={{ opacity: 0 }}
+                transition={{ delay: 2 }}
+            >
               <Loading/>
-            </div>
+            </motion.div>
         )}
         { !loading && (
-          <div className={styles.fadeIn}>
+          <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+          >
               <MainContent/>
-          </div>
+          </motion.div>
         )}
     </Router>
   );

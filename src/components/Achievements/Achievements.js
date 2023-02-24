@@ -27,7 +27,7 @@ const Achievements = forwardRef((props, ref) => {
     };
 
     return (
-        <div id='achievement' ref={ref} {...props} className='section'>
+        <div ref={ref} {...props}>
             <Section num='2' title='Achievements'>
                 <Paper elevation={0} sx={{ backgroundColor: '#0a192f', maxHeight: '50vh', maxWidth: '80vw', overflow: 'auto'  }}>
                     <Timeline>

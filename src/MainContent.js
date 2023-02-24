@@ -67,10 +67,10 @@ const MainContent = forwardRef((props, ref) => {
                 <Slide appear={false} direction="down" in={!scroll}>
                     <Header/>
                 </Slide>
-                <Box ref={introRef}>
+                <Box ref={introRef} className='section'>
                     <Intro />
                 </Box>
-                <Box ref={aboutRef}>
+                <Box ref={aboutRef} className='section'>
                     <motion.div
                         initial={{ opacity: 0, x: '-50vw' }}
                         whileInView={{ opacity: 1 , x: '0vw', transition: {
@@ -84,7 +84,7 @@ const MainContent = forwardRef((props, ref) => {
                         <About />
                     </motion.div>
                 </Box>
-                <Box ref={educationRef}>
+                <Box ref={educationRef} className='section'>
                     <motion.div
                         initial={{ opacity: 0, x: '50vw' }}
                         whileInView={{ opacity: 1 , x: '0vw', transition: {
@@ -98,21 +98,21 @@ const MainContent = forwardRef((props, ref) => {
                         <Education />
                     </motion.div>
                 </Box>
-                <Box ref={achievementsRef}>
+                <Box ref={achievementsRef} className='section'>
                     <motion.div
-                        initial={{ scale: 0 }}
+                        initial={{ scale: 0.25 }}
                         whileInView={{ scale: 1 , transition: {
                                 type: "spring",
                                 bounce: 0.4,
                                 duration: 0.8
                             }
                         }}
-                        viewport={{ root: mainContentRef }}
+                        viewport={{ root: mainContentRef, margin: '-50% 0% -50% 0%' }}
                     >
                         <Achievements />
                     </motion.div>
                 </Box>
-                <Box ref={activitiesRef}>
+                <Box ref={activitiesRef} className='section'>
                     <motion.div
                         initial={{ opacity: 0, x: '50vw' }}
                         whileInView={{ opacity: 1 , x: '0vw', transition: {
@@ -121,12 +121,12 @@ const MainContent = forwardRef((props, ref) => {
                                 duration: 0.8
                             }
                         }}
-                        viewport={{ root: mainContentRef, margin: '-50% 0% -50% 0%'  }}
+                        viewport={{ root: mainContentRef, margin: '-50% 0% -50% 0%' }}
                     >
                         <Activities />
                     </motion.div>
                 </Box>
-                <Box ref={workRef}>
+                <Box ref={workRef} className='section'>
                     <motion.div
                         initial={{ opacity: 0, x: '-50vw' }}
                         whileInView={{ opacity: 1 , x: '0vw', transition: {
@@ -135,12 +135,12 @@ const MainContent = forwardRef((props, ref) => {
                                 duration: 0.8
                             }
                         }}
-                        viewport={{ root: mainContentRef, margin: '-50% 0% -50% 0%'  }}
+                        viewport={{ root: mainContentRef, margin: '-50% 0% -50% 0%' }}
                     >
                         <Work />
                     </motion.div>
                 </Box>
-                <Box ref={projectsRef}>
+                <Box ref={projectsRef} className='section'>
                     <motion.div
                         initial={{ opacity: 0, x: '50vw' }}
                         whileInView={{ opacity: 1 , x: '0vw', transition: {
@@ -149,21 +149,21 @@ const MainContent = forwardRef((props, ref) => {
                                 duration: 0.8
                             }
                         }}
-                        viewport={{ root: mainContentRef, margin: '-50% 0% -50% 0%'  }}
+                        viewport={{ root: mainContentRef, margin: '-50% 0% -50% 0%' }}
                     >
                         <Projects />
                     </motion.div>
                 </Box>
-                <Box ref={contactsRef}>
+                <Box ref={contactsRef} className='section' style={{ marginBottom: '-10vh' }}>
                     <motion.div
-                        initial={{ scale: 0, rotate: 20 }}
+                        initial={{ scale: 0.25, rotate: 20 }}
                         whileInView={{ scale: 1 , rotate: 0, transition: {
                                 type: "spring",
                                 bounce: 0.4,
                                 duration: 0.8
                             }
                         }}
-                        viewport={{ root: mainContentRef }}
+                        viewport={{ root: mainContentRef, margin: '-50% 0% -50% 0%' }}
                     >
                         <Contact />
                     </motion.div>

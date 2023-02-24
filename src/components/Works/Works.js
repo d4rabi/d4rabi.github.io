@@ -16,11 +16,11 @@ const Works = forwardRef((props, ref) => {
     };
 
     return (
-        <div id='work' ref={ref} {...props} className='section'>
+        <div ref={ref} {...props}>
             <Section num='4' title='Works'>
                 <Box sx={{ height: '50vh', maxWidth: '80vw', overflow: 'auto' }}>
                     {works.map((work, index) => (
-                        <Paper key={index} sx={{ bgcolor: '#8791af', display: 'flex' }}>
+                        <Paper key={index} sx={{ bgcolor: '#8791af', display: 'flex', mb: '1vh' }}>
                             <Accordion sx={{ backgroundColor: '#8791af' }} expanded={ accordionExpanded === 'panel'+(index+1) } onChange={handleChangeAccordionExpanded('panel'+(index+1))}>
                                 <AccordionSummary
                                     expandIcon={<ExpandMoreIcon />}

@@ -15,7 +15,7 @@ import { educations } from '../../data/staticData';
 
 const Education = forwardRef((props, ref) => {
     return (
-        <div id='education' ref={ref} {...props} className='section'>
+        <div ref={ref} {...props}>
             <Section num='1' title='Education'>
                 <Paper sx={{ bgcolor: '#8791af', display: 'flex', maxHeight: '50vh', maxWidth: '80vw', overflow: 'auto' }} >
                     <Timeline sx={{ width: { xs: '265px', sm: '400px', md: '580px' }}}>
