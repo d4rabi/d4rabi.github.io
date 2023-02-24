@@ -18,7 +18,7 @@ const Works = forwardRef((props, ref) => {
     return (
         <div id='work' ref={ref} {...props} className='section'>
             <Section num='4' title='Works'>
-                <Box sx={{ height: '50vh', width: '80vw', overflow: 'auto' }}>
+                <Box sx={{ height: '50vh', maxWidth: '80vw', overflow: 'auto' }}>
                     {works.map((work, index) => (
                         <Paper key={index} sx={{ bgcolor: '#8791af', display: 'flex' }}>
                             <Accordion sx={{ backgroundColor: '#8791af' }} expanded={ accordionExpanded === 'panel'+(index+1) } onChange={handleChangeAccordionExpanded('panel'+(index+1))}>

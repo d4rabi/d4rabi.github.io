@@ -18,7 +18,7 @@ const Projects = forwardRef((props, ref) => {
     return (
         <div id='project' ref={ref} {...props} className='section'>
             <Section num='5' title='Projects'>
-                <Paper sx={{ bgcolor: '#8791af', height: '50vh', width: '80vw', overflow: 'auto' }}>
+                <Paper sx={{ bgcolor: '#8791af', height: '50vh', maxWidth: '80vw', overflow: 'auto' }}>
                     <TabContext  value={tabActive}>
                         <TabList
                             variant="scrollable"

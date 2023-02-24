@@ -30,7 +30,7 @@ const Activities = forwardRef((props, ref) => {
     return (
         <div id='activity' ref={ref} {...props} className='section'>
             <Section num='3' title='Activities'>
-                <Paper sx={{ bgcolor: '#8791af', display: 'flex', height: '50vh', width: '80vw', overflow: 'auto' }} >
+                <Paper sx={{ bgcolor: '#8791af', display: 'flex', height: '50vh', maxWidth: '80vw', overflow: 'auto' }} >
                 <TabContext value={tabActive}>
                     <TabList
                         orientation="vertical"

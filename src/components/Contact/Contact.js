@@ -25,7 +25,7 @@ const Contact = forwardRef((props, ref) => {
     return (
         <div id='contact' ref={ref} {...props} style={{ marginBottom: '-10vh' }} className='section'>
             <Section num='6' title='Contact'>
-                <Paper sx={{ p: { xs: '8px', sm: '12px', md: '18px' }, bgcolor: '#8791af', justifyContent: 'center', maxHeight: '50vh', width: '80vw', overflow: 'auto'  }}>
+                <Paper sx={{ p: { xs: '8px', sm: '12px', md: '18px' }, bgcolor: '#8791af', justifyContent: 'center', maxHeight: '50vh', maxWidth: '80vw', overflow: 'auto'  }}>
                     <Typography variant='h6' align= 'center' sx={{color: '#0a192f', fontSize: { xs: '18px', sm: '24px', md: '28px' }, fontWeight: 700}}>
                         Please feel free to contact me if you have any questions or if you are interested in working together.
                     </Typography>

@@ -29,7 +29,7 @@ const Achievements = forwardRef((props, ref) => {
     return (
         <div id='achievement' ref={ref} {...props} className='section'>
             <Section num='2' title='Achievements'>
-                <Paper elevation={0} sx={{ backgroundColor: '#0a192f', maxHeight: '50vh', width: '80vw', overflow: 'auto'  }}>
+                <Paper elevation={0} sx={{ backgroundColor: '#0a192f', maxHeight: '50vh', maxWidth: '80vw', overflow: 'auto'  }}>
                     <Timeline>
                         {achievements.map((achievement, index) => (
                             <TimelineItem key={index}>

@@ -100,14 +100,14 @@ const MainContent = forwardRef((props, ref) => {
                 </Box>
                 <Box ref={achievementsRef}>
                     <motion.div
-                        initial={{ opacity: 0, left: '-50vw' }}
-                        whileInView={{ opacity: 1 , left: '0vw', transition: {
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 , transition: {
                                 type: "spring",
                                 bounce: 0.4,
                                 duration: 0.8
                             }
                         }}
-                        viewport={{ root: mainContentRef, margin: '-50% 0% -50% 0%'  }}
+                        viewport={{ root: mainContentRef }}
                     >
                         <Achievements />
                     </motion.div>
@@ -156,14 +156,14 @@ const MainContent = forwardRef((props, ref) => {
                 </Box>
                 <Box ref={contactsRef}>
                     <motion.div
-                        initial={{ opacity: 0, x: '-50vw' }}
-                        whileInView={{ opacity: 1 , x: '0vw', transition: {
+                        initial={{ scale: 0, rotate: 20 }}
+                        whileInView={{ scale: 1 , rotate: 0, transition: {
                                 type: "spring",
                                 bounce: 0.4,
                                 duration: 0.8
                             }
                         }}
-                        viewport={{ root: mainContentRef, margin: '-50% 0% -50% 0%'  }}
+                        viewport={{ root: mainContentRef }}
                     >
                         <Contact />
                     </motion.div>

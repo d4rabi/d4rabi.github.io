@@ -13,7 +13,7 @@ const About = forwardRef((props, ref) => {
     return (
         <div id='about' ref={ref} {...props} className='section'>
             <Section num='0' title='About'>
-                <Paper elevation={0} sx={{ bgcolor: '#0a192f', display: 'flex', height: '50vh', width: '80vw', overflow: 'auto' }} >
+                <Paper elevation={0} sx={{ bgcolor: '#0a192f', display: 'flex', height: '50vh', maxWidth: '80vw', overflow: 'auto' }} >
                     <Grid container spacing={2}>
                         <Grid item xs={12} md={8} my='12px'>
                             <Typography
