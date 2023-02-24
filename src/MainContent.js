@@ -37,7 +37,14 @@ const MainContent = forwardRef((props, ref) => {
     }
 
     useEffect(() => {
-        const path = location.pathname.split('/')[2];
+        let path;
+
+        if(prePath){
+            path = location.pathname.split('/')[2];
+        } else {
+            path = location.pathname.split('/')[1];
+        }
+
         if (path === 'about') {
             handleScroll(aboutRef);
         } else if (path === 'education') {

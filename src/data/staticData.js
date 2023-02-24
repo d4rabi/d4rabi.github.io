@@ -1,4 +1,4 @@
-export const prePath = '/resume';
+export const prePath = '';
 
 export const pages = 
     [
