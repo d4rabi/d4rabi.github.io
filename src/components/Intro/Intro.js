@@ -15,7 +15,7 @@ function Button(prop) {
 
 const Intro = forwardRef((props, ref) => {
     return (
-        <div id='intro' ref={ref} {...props}>
+        <div id='' ref={ref} {...props} className='section'>
             <Paper
                 elevation={0}
                 sx={{ 
@@ -24,9 +24,9 @@ const Intro = forwardRef((props, ref) => {
                     justifyContent: 'center',
                     height: '100vh',
                     mx: {xs: '10vh', md: '20vh'},
-                    my: '8vh',
                     backgroundColor: '#0a192f'
                 }}
+                className='section'
             >
                 <Typography 
                     color='#5ceaca' 

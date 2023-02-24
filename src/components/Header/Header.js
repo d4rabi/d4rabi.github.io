@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState, forwardRef } from 'react';
+import { AppBar, Toolbar } from "@mui/material";
 import { NavLink } from 'react-router-dom';
-import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -11,20 +10,10 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import logo from './../../images/logo.svg';
+import { prePath, pages } from "./../../data/staticData";
 
-const pages = 
-    [
-        {num: '[0]', name: 'About', link: '/about'}, 
-        {num: '[1]', name: 'Education', link: '/education'}, 
-        {num: '[2]', name: 'Achievement', link: '/achievement'}, 
-        {num: '[3]', name: 'Activity', link: '/activity'}, 
-        {num: '[4]', name: 'Work', link: '/work'}, 
-        {num: '[5]', name: 'Project', link: '/project'}, 
-        {num: '[6]', name: 'Contact', link: '/contact'}
-    ];
-
-function Header() {
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
+const Header = forwardRef((props, ref) => {
+    const [anchorElNav, setAnchorElNav] = useState(null);
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -35,12 +24,12 @@ function Header() {
     };
 
     return (
-        <AppBar position="fixed" sx={{ backgroundColor: '#0a192f' }}>
+        <AppBar position="fixed" sx={{ backgroundColor: '#0a192f' }} ref={ref}>
             <Container maxWidth="xl">
                 <Toolbar>
-                    <a href='/'  rel="noopener noreferrer">
+                    <NavLink to={prePath}>
                         <img src={logo} alt="logo" style={{ height: '35px', width: 'auto' }}/>
-                    </a>
+                    </NavLink>
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'flex-end'}}>
                         <IconButton
                             size="large"
@@ -79,6 +68,7 @@ function Header() {
                                 <MenuItem key={page.num} onClick={handleCloseNavMenu}>
                                     <Button
                                         sx={{ 
+                                            m: 2,
                                             color:'#5ceaca',
                                             '&.active': {
                                                 color: '#0a192f',
@@ -102,7 +92,7 @@ function Header() {
                                 key={page.num}
                                 onClick={handleCloseNavMenu}
                                 sx={{ 
-                                        my: 2, 
+                                        m: 2, 
                                         color: '#5ceaca', 
                                         display: 'flex',
                                         '&.active': {
@@ -123,5 +113,5 @@ function Header() {
             </Container>
         </AppBar>
     );
-}
+});
 export default Header;

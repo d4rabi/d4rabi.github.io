@@ -10,18 +10,14 @@ import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import SchoolIcon from '@mui/icons-material/School';
 import Typography from '@mui/material/Typography';
+import { educations } from '../../data/staticData';
 
-const educations =
-    [
-        {year: '2014 - 2017', name: 'SMAN 1 Gunung Talang', detail: 'Major: Science', score: 'Average Score: 90.57/100'},
-        {year: '2017 - Present', name: 'Diponegoro University', detail: 'Major: Computer Science', score: 'GPA: 3.58/4'}
-    ];
 
 const Education = forwardRef((props, ref) => {
     return (
-        <div id='education' ref={ref} {...props} style={{ paddingTop: '5vh' }}>
+        <div id='education' ref={ref} {...props} className='section'>
             <Section num='1' title='Education'>
-                <Paper elevation={5} sx={{ backgroundColor: '#8791af'}} >
+                <Paper sx={{ bgcolor: '#8791af', display: 'flex', maxHeight: '50vh', width: '80vw', overflow: 'auto' }} >
                     <Timeline sx={{ width: { xs: '265px', sm: '400px', md: '580px' }}}>
                         {educations.map((education, index) => (
                             <TimelineItem key={index}>

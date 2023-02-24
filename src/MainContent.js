@@ -1,5 +1,8 @@
-import React, { useEffect, useRef } from 'react'
-import { useLocation } from 'react-router-dom';
+import React, { useEffect, useRef, useState, forwardRef } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useScrollTrigger, Slide, Fab, Box } from "@mui/material";
+import { motion } from "framer-motion";
+import NavigationIcon from '@mui/icons-material/Navigation';
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import About from "./components/About/About";
@@ -10,8 +13,12 @@ import Activities from "./components/Activities/Activities";
 import Work from "./components/Works/Works";
 import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
+import { prePath } from "./data/staticData";
 
-function MainContent() {
+
+const MainContent = forwardRef((props, ref) => {
+    const [mainContentRef, setMainContentRef] = useState(undefined); 
+
     const introRef = useRef(null);
     const aboutRef = useRef(null);
     const educationRef = useRef(null);
@@ -21,48 +28,153 @@ function MainContent() {
     const projectsRef = useRef(null);
     const contactsRef = useRef(null);
 
+    const location = useLocation();
+    const navigate = useNavigate();
+    const scroll = useScrollTrigger({ target: mainContentRef });
+    
     const handleScroll = (elRef) => {
-        elRef.current.scrollIntoView({ behavior: 'smooth', block: "start" });
+        elRef.current.scrollIntoView({ behavior: 'smooth', block: "center" });
     }
 
-
-    const location = useLocation();
-
     useEffect(() => {
-        const path = location.pathname.split('/')[1];
-        if(path === ''){
-            handleScroll(introRef);
-        } else if(path === 'about'){
+        const path = location.pathname.split('/')[2];
+        if (path === 'about') {
             handleScroll(aboutRef);
-        } else if(path === 'education'){
+        } else if (path === 'education') {
             handleScroll(educationRef);
-        } else if(path === 'achievement'){
+        } else if (path === 'achievement') {
             handleScroll(achievementsRef);
-        } else if(path === 'activity'){
+        } else if (path === 'activity') {
             handleScroll(activitiesRef);
-        } else if(path === 'work'){
+        } else if (path === 'work') {
             handleScroll(workRef);
-        } else if(path === 'project'){
+        } else if (path === 'project') {
             handleScroll(projectsRef);
-        } else if(path === 'contact'){
+        } else if (path === 'contact') {
             handleScroll(contactsRef);
+        } else {
+            handleScroll(introRef);
         }
     }, [location]);
 
     return (
-        <React.Fragment>
-            <Header />
-            <Intro ref={introRef} />
-            <About ref={aboutRef} />
-            <Education ref={educationRef} />
-            <Achievements ref={achievementsRef} />
-            <Activities ref={activitiesRef} />
-            <Work ref={workRef} />
-            <Projects ref={projectsRef} />
-            <Contact ref={contactsRef} />
-            <Footer />
-        </React.Fragment>
+        <div ref={ref}>
+            <div id='main-content' ref={node => {
+                if (node) {
+                    setMainContentRef(node);
+                }
+            }}>
+                <Slide appear={false} direction="down" in={!scroll}>
+                    <Header/>
+                </Slide>
+                <Box ref={introRef}>
+                    <Intro />
+                </Box>
+                <Box ref={aboutRef}>
+                    <motion.div
+                        initial={{ opacity: 0, x: '-50vw' }}
+                        whileInView={{ opacity: 1 , x: '0vw', transition: {
+                                type: "spring",
+                                bounce: 0.4,
+                                duration: 0.8
+                            }
+                        }}
+                        viewport={{ root: mainContentRef, margin: '-50% 0% -50% 0%' }}
+                    >
+                        <About />
+                    </motion.div>
+                </Box>
+                <Box ref={educationRef}>
+                    <motion.div
+                        initial={{ opacity: 0, x: '50vw' }}
+                        whileInView={{ opacity: 1 , x: '0vw', transition: {
+                                type: "spring",
+                                bounce: 0.4,
+                                duration: 0.8
+                            }
+                        }}
+                        viewport={{ root: mainContentRef, margin: '-50% 0% -50% 0%' }}
+                    >
+                        <Education />
+                    </motion.div>
+                </Box>
+                <Box ref={achievementsRef}>
+                    <motion.div
+                        initial={{ opacity: 0, left: '-50vw' }}
+                        whileInView={{ opacity: 1 , left: '0vw', transition: {
+                                type: "spring",
+                                bounce: 0.4,
+                                duration: 0.8
+                            }
+                        }}
+                        viewport={{ root: mainContentRef, margin: '-50% 0% -50% 0%'  }}
+                    >
+                        <Achievements />
+                    </motion.div>
+                </Box>
+                <Box ref={activitiesRef}>
+                    <motion.div
+                        initial={{ opacity: 0, x: '50vw' }}
+                        whileInView={{ opacity: 1 , x: '0vw', transition: {
+                                type: "spring",
+                                bounce: 0.4,
+                                duration: 0.8
+                            }
+                        }}
+                        viewport={{ root: mainContentRef, margin: '-50% 0% -50% 0%'  }}
+                    >
+                        <Activities />
+                    </motion.div>
+                </Box>
+                <Box ref={workRef}>
+                    <motion.div
+                        initial={{ opacity: 0, x: '-50vw' }}
+                        whileInView={{ opacity: 1 , x: '0vw', transition: {
+                                type: "spring",
+                                bounce: 0.4,
+                                duration: 0.8
+                            }
+                        }}
+                        viewport={{ root: mainContentRef, margin: '-50% 0% -50% 0%'  }}
+                    >
+                        <Work />
+                    </motion.div>
+                </Box>
+                <Box ref={projectsRef}>
+                    <motion.div
+                        initial={{ opacity: 0, x: '50vw' }}
+                        whileInView={{ opacity: 1 , x: '0vw', transition: {
+                                type: "spring",
+                                bounce: 0.4,
+                                duration: 0.8
+                            }
+                        }}
+                        viewport={{ root: mainContentRef, margin: '-50% 0% -50% 0%'  }}
+                    >
+                        <Projects />
+                    </motion.div>
+                </Box>
+                <Box ref={contactsRef}>
+                    <motion.div
+                        initial={{ opacity: 0, x: '-50vw' }}
+                        whileInView={{ opacity: 1 , x: '0vw', transition: {
+                                type: "spring",
+                                bounce: 0.4,
+                                duration: 0.8
+                            }
+                        }}
+                        viewport={{ root: mainContentRef, margin: '-50% 0% -50% 0%'  }}
+                    >
+                        <Contact />
+                    </motion.div>
+                </Box>
+                <Footer />
+            </div>
+            <Fab size="small" sx={{ position: 'fixed', bottom: '5%', right: '10%', backgroundColor: "#5ceaca" }} onClick={()=>navigate(prePath)}>
+                <NavigationIcon />
+            </Fab>
+        </div>
     )
-}
+});
 
 export default MainContent;

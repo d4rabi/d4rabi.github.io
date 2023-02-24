@@ -11,13 +11,15 @@ function Section(prop) {
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
-                height: '95vh',
-                mx: { xs: '10vh', md: '20vh' },
+                height: '100vh',
+                mx: { xs: '10vw', md: '20vw' },
+                my: '5vh',
                 backgroundColor: 'inherit'
             }}
+            style={{ marginTop: '-5vh' }}
         >
-            <Grid container sx={{ mb: '48px' }}>
-                <Grid item xs={12} sm={8} md={6} lg={4}>
+            <Grid container sx={{ mb: '8vh' }}>
+                <Grid item xs={10} sm={8} md={6} lg={4}>
                     <Box sx={{ display: 'flex', justifyContent: 'left' }}>
                         <Typography
                             color='#5ceaca'
@@ -35,7 +37,7 @@ function Section(prop) {
                         </Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={0} sm={4} md={6} lg={8}>
+                <Grid item xs={2} sm={4} md={6} lg={8}>
                     <Divider sx={{ borderBottomWidth: '4px', mt: '14px', backgroundColor: '#5ceaca' }} />
                 </Grid>
             </Grid>
