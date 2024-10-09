@@ -13,8 +13,8 @@ import yt from './../../images/yt.svg';
 const contacts =
     [
         {name: 'LinkedIn', src: linkedin, link: 'https://www.linkedin.com/in/fauzan-el-ardhi/'},
-        {name: 'Instagram', src: ig, link: 'https://www.instagram.com/alfith.d.arabi/'},
-        {name: 'Facebook', src: fb, link: 'https://www.facebook.com/alfith.ardi'},
+        {name: 'Instagram', src: ig, link: 'https://www.instagram.com/d4rabi/'},
+        {name: 'Facebook', src: fb, link: 'https://www.facebook.com/d4rabi'},
         {name: 'WhatsApp', src: wa, link: 'https://wa.me/6282288516526'},
         {name: 'Line', src: line, link: 'https://line.me/R/ti/p/rz5v7Atg54'},
         {name: 'Twitter', src: twitter, link: 'https://twitter.com/IMalfith'},
